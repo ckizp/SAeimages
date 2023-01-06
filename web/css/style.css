@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body {
+    background-color: #FCF9DA;
+}
+
+#topbar {
+    width: 100%;
+    height: 0.5em;
+    background: linear-gradient(45deg, #00f2fb, #fff000, #ff0000, #ff00b4, #8800fb, #006afb, #00a5fb, #00f2fb);
+    background-size: 400%;
+    animation: grad 20s linear infinite;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20%;
+}
+
+.navbar img {
+    width: 200px;
+    transform: scale(1);
+    transition: transform 0.25s ease-in-out;
+}
+
+.navbar img:hover {
+    transform: scale(1.1);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    padding: 0em 2em;
+    color: orangered;
+}
+
+.navbar li {
+    transform: rotate(0);
+    transition: transform 0.25s ease-in-out;
+}
+
+.navbar li:hover {
+    transform: rotate(-12deg);
+}
+
+.panel {
+    position: relative;
+    width: 500px;
+    margin: 0 auto 0;
+    padding: 60px 0px;
+    background-color: #DED9AC;
+    color: #252525;
+}
+
+.panel::before {
+    content: '';
+	position: absolute;
+	left: -7px;
+	top: -7px;
+	background: linear-gradient(45deg, #fff000, #ff0000, #ff00b4, #8800fb, #006afb, #00a5fb, #00f2fb);
+	background-size: 400%;
+	width: calc(100% + 14px);
+	height: calc(100% + 14px);
+	z-index: -1;
+	animation: grad 10s linear infinite;
+}
+
+.checkbox-list {
+    display: block;
+}
+
+.checkbox-list div:not(#last-div) {
+   width: 100%; 
+   padding-left: 72px;
+} 
+
+.panel p {
+    font-size: 19px;
+    text-align: center;
+    color: orangered;
+    padding-top: 25px;
+}
+
+.panel input[type=file], input[type=submit] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panel input[type=submit], input::file-selector-button {
+    border: double;
+    color: #FAFAFA;
+    font-family: 'Permanent Marker', cursive;
+    background-color: orangered;
+    padding: 0.1em 0.9em;
+    padding-bottom: 0.25em;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.panel input[type=submit] {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.panel input[type=submit]:hover, input::file-selector-button:hover {
+    background-color: crimson;
+}
+
+.panel input[name="fusion"] {
+    margin-left: 72px;
+}
+
+.panel .second-file {
+    display: none;
+}
+
+.panel input[name="fusion"]:checked ~ .second-file {
+    display: inline;
+}
+
+span {
+    position: absolute;
+    visibility: hidden;
+    background-color: orangered;
+    border: double #FAFAFA;
+    color: #FAFAFA;
+    font-family: 'Merriweather', serif;
+    padding: 15px;
+    transform: scale(0) rotate(-12deg);
+    transition: all 0.25s;
+}
+
+.checkbox-list div label:hover ~ span {
+    visibility: visible;
+    transform: scale(1) rotate(0);
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 10px;
+    color: orangered;
+    font-size: 20px;
+    text-align: center;
+}
+
+@keyframes grad {
+    0% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+@media (max-width: 1000px) {
+	.panel {
+		margin-bottom: 20px;
+	}
+    .navbar .logo {
+        text-align: center;
+    }
+    .navbar img {
+        width: 170px;
+    }
+    .navbar a {
+        padding: 0 0;
+    }
+    .navbar {
+        display: block;
+
+    }
+    .navbar ul {
+        display: block;
+        text-align: center;
+    }
+	footer {
+		position: static;
+	}
+}
+
+@media (max-width: 530px) {
+    .panel {
+        width: 100%;
+    }
+    .panel input[type=submit] {
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    footer {
+        font-size: 15px;
+    }
+    .panel input[type=submit] {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+    .checkbox-list div:not(#last-div) {
+        padding-left: 0px;
+    }
+    .panel input[name="fusion"] {
+        margin-left: 0px;
+    }
+    .panel::before {
+        left: 0px;
+        width: calc(100%);
+    }
+}
+
+@media (max-width: 340px) {
+    .checkbox-list {
+        font-size: 13px;
+    }
+    .panel p {
+        font-size: 15px;
+    }
+    .panel input[type=file] {
+        font-size: 11px;
+    }
+}

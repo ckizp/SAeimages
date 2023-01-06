@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>SAeimages</title>
+    <meta charset="utf-8">
+    <meta name="author" content="T. Ibraguim, B. Corentin, G. Pierre & W. Nicolas">
+    <meta name="description" content="Réalisé dans le cadre d'un projet universitaire, ce site vous permet de traiter vos images ! Transformez votre image en niveaux de gris, 
+    en monochromatique, inversez ses couleurs, obtenez ses contours ou encore surposez deux images !">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="topbar"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./img/SAeimages.png" alt="logo">
+        </div>
+        <div class="links">
+            <uL>
+                <li><a href="https://github.com/ckizp/SAeimages">GitHub</a></li>
+                <li><a href="#">Doc</a></li>
+            </uL>
+        </div>
+    </nav>
+    <div class="panel">
+        <form action="index.py" method="post">
+            <!-- Fichier 1 -->
+            <p>Fichier BMP :</p>
+            <input type="file" name="fichier1" accept=".bmp" required>
+
+            <p>Traitements :</p>
+            <div class="checkbox-list">
+                <div>
+                    <input type="checkbox" name="gris" value="ok">
+                    <label>Niveaux de gris</label>
+                    <span>Ce traitement transforme votre image en nuances de gris.</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="inversion" value="ok">
+                    <label>Inversion des couleurs</label>
+                    <span>Ce traitement permet d'inverser les couleurs de l'image.</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="monochrome" value="ok">
+                    <label>Image monochrome</label>
+                    <span>Ce traitement permet transforme votre image en noir et blanc uniquement.</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="contour" value="ok">
+                    <label>Extraire les contours</label>
+                    <span>Ce traitment permet d'extraire les contours de votre image.</span>
+                </div>
+                <div id="last-div">
+                    <input type="checkbox" name="fusion" value="ok">
+                    <label>Superposer deux images</label>
+                    <span>Ce traitement permet de superposer deux images.</span>
+                    <div class="second-file"><!-- Fichier 2 -->
+                        <p>Deuxième fichier BMP :</p>
+                        <input type="file" name="fichier2" accept=".bmp">
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Traiter l'image">
+        </form>
+    </div>
+    <footer>
+        <!-- LOG -->
+        <p>Réalisé avec ♥ par Temirkhaev Ibraguim, Bonjour Corentin, Gaudin Pierre & Marques Nicolas</p>
+    </footer>
+</body>
+
+</html>
