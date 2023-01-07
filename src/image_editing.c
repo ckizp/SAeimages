@@ -11,7 +11,10 @@ image_t read_image(FILE* f, int width, int height) {
     img.height = height;
     img.rgb = (color_t**) malloc(height * sizeof(void*));
     // retourne -1 si l'allocation se passe mal, de ce fait le traitement ne pourra pas bien se dérouler
-    if (img.rgb == NULL) exit(-1);
+    if (img.rgb == NULL) {
+        free(path);
+        exit(-1);
+    }
     for (i = 0; i < height; ++i) {
         img.rgb[i] = (color_t*) malloc(width * sizeof(color_t));
         // Libère toute la mémoire allouée jusqu'ici si l'allocation se passe mal et retourne -1
